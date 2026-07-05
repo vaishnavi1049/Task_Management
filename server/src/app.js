@@ -5,6 +5,8 @@ require("dotenv").config();
 const authRoutes = require("./routes/authRoutes");
 const employeeRoutes = require("./routes/employeeRoutes");
 const taskRoutes = require("./routes/taskRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const reportRoutes = require("./routes/reportRoutes");
 
 const app = express();
 
@@ -16,6 +18,9 @@ app.use("/api/auth", authRoutes);
 app.use("/api/employees", employeeRoutes);
 
 app.use("/api/tasks", taskRoutes);
+
+app.use("/api/dashboard", dashboardRoutes);
+app.use("/api/reports", reportRoutes);
 
 app.get("/", (req, res) => {
   res.send("Employee Task Management API");
